@@ -1,10 +1,8 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// has css script of index,books,donate_books,review pages
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Lato:wght@300;400;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Lato:wght@300;400&display=swap');
-
+//index page
 .main_div{
     width:100%;
     height:100vh;
@@ -572,7 +570,6 @@ body{
     width: 60%;
     border-radius: 8px;
     padding: 20px 40px;
-    // box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   }
   
   .title {
@@ -595,7 +592,6 @@ body{
     width: 90%;
     margin-bottom: 17px;
   }
-  /* Style the inputs */
 
 .input {
     position: absolute;
@@ -611,8 +607,6 @@ body{
     background: none;
     z-index: 1;
   }
-  
-  /* Hide the placeholder texts (a) */
   
   ::placeholder {
     color: transparent;
@@ -710,7 +704,6 @@ body{
   width: 90%;
   margin-bottom: 17px;
 }
-/* Style the inputs */
 
 .popinput {
   position: absolute;
@@ -726,8 +719,6 @@ body{
   background: none;
   z-index: 1;
 }
-
-/* Hide the placeholder texts (a) */
 
 .popinput::placeholder {
   color: transparent;
@@ -799,12 +790,8 @@ body{
   font-size: 16px;
   width: 100%;
 }
+//review_page
 .star-checking{
-  // position: absolute;
-  // top: -10px;
-  // left: 0px;
-  // height: 100%;
-  // width: 100%;
   border: 1px solid #DADCE0;
   border-radius: 7px;
   font-size: 16px;
@@ -814,7 +801,6 @@ body{
   z-index: 1;
 }
 #pop-up-div2{
-  // top:20%;
   left: 0;
   display: flex;
   justify-content: center;
