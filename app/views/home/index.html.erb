@@ -1,0 +1,120 @@
+
+<%= render "header" %>
+  <div class="main_div">
+    <div class="main_row">
+      <div class="col-md outer_div">
+        <div class="headings">
+          <div class="subhead"><span>Explore</span>
+          <span> your</span>
+          <span> favourite</span> 
+          <span> Books</span>
+           <%= image_tag('books-removebg-preview.png',id:"book_head_img",alt: "mainimg" ) %></div>
+          <div class="mainhead"><span>Feed</span>
+          <span> Your</span> 
+          <span>Cerebral</span>
+          <span>With </span>
+          <span>Us!!</span>
+          </div>
+          <div class="search">
+             <button id="startbutton" type="submit">Get Started</button>
+              <button id="explorebutton" type="submit">Explore</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md outer_div">
+
+      <div class="main_side_div">
+      <div class="img_div">
+          <%= image_tag('mainImg.png',alt: "mainimg" ) %>
+      </div></div>
+      <div class="main_side_div2">
+          <%= image_tag('violetbg.jpg',alt: "mainimg" ) %>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  </div>
+  <div class="circles">
+    <div class="circle-l"></div>
+    <div class="circle-l"></div>
+    <div class="circle-l"></div>
+    <div class="circle-l"></div>
+    <div class="circle-s"></div>
+    <div class="circle-s"></div>
+    <div class="circle-s"></div>
+    <div class="circle-s"></div>
+    <div class="circle-s"></div>
+  </div>
+</div>
+
+  </div>
+<div id="gallery-container">
+
+<h1 class="dancingscript">Reading is a magical Gateway!!</h1>
+<hr class="underline">
+<div class="container1">
+  <div class="box">
+     <%= image_tag('A_wishing_chair_2.jpg',alt: "mainimg" ) %>
+  </div>
+  <div class="box">
+   <%= image_tag('Alice_In_Wonderland.jpg',alt: "mainimg" ) %>
+  </div>
+  <div class="box">
+    <%= image_tag('Disney_collection_1.jpg',alt: "mainimg" ) %>
+  </div>
+  <div class="box">
+    <%= image_tag('harry_potter.jpg',alt: "mainimg" ) %>
+  </div>
+</div>
+<button class="bubbly-button">Explore more!</button>
+</div>
+<section class="footer_end">
+  <!-- Footer -->
+  <footer class="text-center text-white" style="background-color:#50026e ;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <a href="/signup"> <button type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button></a>
+        </p>
+      </section>
+      <!-- Section: CTA -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: #301a4e;">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">jerusheya2002@gmail.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</section>
+
+  <script>
+  var animateButton = function(e) {
+
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+  
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+  
+  </script>

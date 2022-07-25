@@ -1,0 +1,22 @@
+<div class="signup_page">
+<div class="row signup">
+<div class="col-md signup-col">
+<%= image_tag('signup1.jpg',id:"signup_img",alt: "mainimg" ) %>
+<div class="quote"><pre>
+ "I do believe 
+ something very 
+magical can happen
+  when you read
+   a good book"
+   -J.K.Rowling
+</pre></div>
+</div>
+<div class="col-md signup-col">
+<div class="signup_form">
+<h1 id="welcome">Create your profile!</h1>
+<h6 id="sub_welcome_text">Please enter your details</h6>
+<%= render 'form', user: @user %>
+</div>
+</div>
+</div>
+</div>

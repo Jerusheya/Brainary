@@ -1,0 +1,196 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Lato:wght@300;400;700&display=swap');
+ *{
+     padding: 0%;
+     margin: 0%;
+     box-sizing: border-box;
+ }
+ *,
+*:before,
+*:after {
+  box-sizing: border-box;
+  position: relative;
+  letter-spacing: 0.04em;
+}
+ body{
+     margin: 0%;
+     padding: 0%;
+ }
+
+.nav_bar{
+    height: 15vh;
+   background-color: #f2eefb;
+   
+}
+
+.logo_div{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_div img{
+    width: 40%;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .offcanvas-body{
+    position: relative;
+}
+.offcanvas-body ul li a{
+    font-size: 1.1vw;
+    font-weight: 300px;
+    color: #372153;
+}
+
+.offcanvas-body ul{
+    width: 40%;
+    height: 100%;
+    margin-left: 20%;
+}
+.offcanvas-body ul li a:hover{
+
+    color: #8a63d1;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #8a63d1;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    margin-left: 8px;
+    background-color: #825acc;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+
+.offcanvas-body ul{
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    color: #372153;
+}
+
+
+.offcanvas-body ul li{
+    margin:0% 10%;
+}
+.offcanvas-body ul li:nth-child(4) a{
+    color: #372153;
+}
+.offcanvas-body ul li:nth-child(4) a:hover{
+    color: #8a63d1;
+}
+@media only screen and (max-width: 768px) {
+  
+    .offcanvas-body ul li:nth-child(4) a{
+        color: rgb(0, 0, 0);
+        margin-left: 2%;
+    }
+    .offcanvas-body ul li:nth-child(3) a{
+        margin-left:12%;
+    }
+    .offcanvas-body ul li a{
+    color: rgb(15, 14, 15);}
+    .offcanvas-body ul li a:hover{
+
+        color: #8a63d1;
+    }
+}
+@media only screen and (min-width: 768px) {
+.btn_div{
+    margin-left: 60%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_div button{
+    margin: 0% 0%;
+    border: none;
+    color: rgb(251, 230, 251);
+    background-color: #44266d;
+    margin-left: 1%;
+    width: 100%;
+    box-shadow: 0 2px 25px rgba(111, 2, 144, 0.5);
+}
+.btn_div button a{
+    padding: 2% 7%;
+    font-weight: bold;
+font-family: 'Karla', sans-serif;
+} 
+}
+.tog{
+    font-size: small;
+}
+@media only screen and (max-width: 768px) {
+  
+
+    .btn_div button{
+        margin-top: 46%;
+        margin-left: -6%;
+        border: none;
+        outline: none;
+    }
+
+    .btn_div button a{
+    font-size: 1.1vw;
+    font-weight: 300px;
+    color: rgb(15, 14, 15);
+    }
+
+    .btn_div button a:hover{
+        color: #825acc;
+    }
+
+    .logo_div img{
+        width:120%;
+        height: 30%;
+        animation: none;
+    }
+    #logo2{
+        width:40%;
+        height: 10%;
+    }
+    .tog{
+        font-size: larger;
+        color: #44266d;
+    }
+}

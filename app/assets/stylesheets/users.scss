@@ -1,0 +1,109 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.signup_page{
+    padding: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+#signup_img{
+    width: 100%;
+    height: 100vh;
+}
+.signup_form{
+    width: 80%;
+}
+
+.field label{
+    font-size: 1.0vw;
+    padding-bottom:1% ;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    color: #43226b;
+}
+.field input{
+    border-radius: 4px;
+    border: 0.5px solid rgb(149, 149, 149);
+    width: 100%;
+    padding: 1% 1%;
+    outline: none;
+}
+.field{
+    padding: 2%;
+}
+.form_sign_up{
+    padding-top: 4%;
+}
+
+.signup-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#welcome{
+    color: #43226b;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    font-size: 2.3vw;
+}
+#sub_welcome_text{
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    color: #43226b;
+    margin-left: 1%;
+}
+#alreadyuser{
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    color: #43226b;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.actions input{
+    margin-top:1%;
+    border: none;
+    padding: 1%;
+    font-size: 1vw;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    color: rgb(251, 230, 251);
+    background-color: #44266d;
+    border-radius: 4px;
+    width: 30%;
+}
+.quote{
+    position: absolute;
+    top:59%;
+    background-color:rgba(255, 255, 255, 0.507);
+    opacity: 0.8;
+    color: #43226b;
+    width: 100%;
+}
+.quote pre{
+    text-align: right;
+    padding-right:8%;
+    font-size: 32px;
+    opacity: 1;
+    padding-bottom: 2%;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+.login_form{
+    width: 60%;
+}
+.login_form .actions input{
+    width: 100%;
+}
+.field h6 a {
+    color: blue;
+}
+.field h6 a :hover{
+    color: #43226b;
+    cursor: pointer;
+    background-color: transparent;
+}
+#alert{
+    color: red;
+}

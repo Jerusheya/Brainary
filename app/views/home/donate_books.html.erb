@@ -1,0 +1,41 @@
+<%= render "header" %>
+<div class="donate-main">
+    <div>
+        <div class="signupFrm">
+        <form action="/donate" class="form" method="post">
+        <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token%>>
+          <h1 class="title">Donate A Book</h1>
+          <p1 class="sub-title">Share the joy of reading!!</p1>
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a"name="donate[name]" >
+            <label for="" class="label">Name</label>
+            <i class="fa-solid fa-user i1"></i>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a" name="donate[book_name]">
+            <label for="" class="label">Book Name</label>
+            <i class="fa-solid fa-book i1"></i>
+          </div>
+    
+          <div class="inputContainer">
+            <input type="tel" class="input" placeholder="a" name="donate[mobile]">
+            <label for="" class="label">Mobile</label>
+            <i class="fa-solid fa-phone i1"></i>
+          </div>
+
+          <div class="inputContainer">
+            <input type="text" class="input" placeholder="a" name="donate[address]">
+            <label for="" class="label">Address</label>
+            <i class="fa-solid fa-location-pin i1"></i>
+          </div>
+          <button type="submit" class="submitBtn" >Add Task</button>
+        </form>
+      </div>
+
+    </div>
+    <div> <%= image_tag('bookgirl-edit.png',id:"back-pic", alt: "logoimg") %></div>
+</div>
+<style>.nav_bar{
+    background-color: transparent;
+}</style>

@@ -1,0 +1,63 @@
+<%# working on this page %>
+
+<%= render "header" %>
+<%# <div class="main-book-div"> %>
+<button onclick="popupform()" class="i-plus"><i class="fa-solid fa-plus"></i></button>
+<%# </div> %>
+<%# <div class="main-book-div-2"></div>
+</div> %>
+
+
+<%# popupdiv %>
+<div id="pop-up-div" class="hidden">
+<div id="pop-up-form">
+ <div class="signupFrm2">
+    <form action="/create" class="popform" method="post">
+    <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token%>>
+      <h1 class="poptitle">Add Book</h1>
+      <h6 class="pop-subtitle">Please enter the book details</h6>
+      <label for="" class="poplabel-upload">Upload Book Picture</label>
+      <div class="inputContainer2">
+        <input type="file" class="popinput1" placeholder="a" name="">
+      </div>
+
+      <div class="inputContainer2">
+        <input type="text" class="popinput" placeholder="a" name="">
+        <label for="" class="poplabel">Name</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input type="text" class="popinput" placeholder="a" name="">
+        <label for="" class="poplabel">Author</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input type="text" class="popinput" placeholder="a" name="">
+        <label for="" class="poplabel">Description</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input type="text" class="popinput" placeholder="a" name="">
+        <label for="" class="poplabel">Language</label>
+      </div>
+
+      <button type="submit" class="addBtn" >Add Book</button>
+    </form>
+  </div>
+</div>
+</div>
+<style>
+.hidden{
+  visibility:hidden;
+}
+.show{
+  visibility: visible;
+}
+</style>
+<script>
+function popupform(){
+  var popup = document.getElementById("pop-up-div");
+  popup.classList.toggle("show");
+ popup.classList.toggle("hidden");
+}
+</script>
