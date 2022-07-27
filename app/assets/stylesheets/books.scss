@@ -1,0 +1,342 @@
+
+.main_book_page_div{
+    height: 100vh;
+    background-color: #56397e;
+}
+.books_main_row{
+    height: 100%;
+}
+.books_detail_row{
+    width: 100%;
+    height: 100%;
+    background-color: #f2eefb;
+}
+.books_detail_column{
+    height: 100%;
+}
+.book_img_div{
+
+    height: 100%;
+}
+.book_desc_div{
+    height: 100%;
+}
+
+.books_roller_div{
+    position: absolute;
+    height: 90%;
+    background-color: #56397e;
+    bottom: 0;
+    right: 0;
+    margin-left: 50%;
+}
+.img-circle-back{
+    border-radius: 50%;
+    width: 64%;
+    height: 52%;
+    top: 25%;
+    left: 23%;
+    background-color: #56397e;
+    position: absolute;
+    
+}
+#book-main-pic{
+    top: 25%;
+    left: 30%;
+    position: absolute;
+    width: 50%;
+    height: 55%;
+    box-shadow:24px 27px 38px -10px rgba(0,0,0,1);
+}
+.book_writings_content{
+    margin-top: 25%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&display=swap');
+
+.book_name{
+    font-family: 'Ibarra Real Nova', serif;
+    color:#372452;
+    font-weight: bold;
+    font-size: 60px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+.author{
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    color:#56397e;
+    margin-top: 1%;
+    padding-bottom: 1%;
+}
+.author_name{
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing:3px;
+    color:#56397e;
+    margin-top: 1%;
+    padding-bottom: 1%;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap');
+.book_content{
+    margin-top: 1%;
+    padding-bottom: 2%;
+    font-family: 'Noto Serif', serif;
+    font-size: 10px;
+    color:#372452;
+}
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+.book_common_review{
+    
+}
+
+.lang{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Kanit', sans-serif;
+    color:#56397e;
+    letter-spacing:2px;
+}
+
+.lang span{
+    font-weight: lighter;
+}
+
+.i-plus{
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 5%;
+    position: absolute;
+    border: none;
+    color: #372452;
+  }
+
+  .i-plus-close{
+      width: 10%;
+    font-size: 20px;
+    top: 1%;
+    right: 5%;
+    position: absolute;
+    border: none;
+    color: #372452;
+    z-index: 1000;
+  }
+
+  #pop-up-div-hidden{
+    position:absolute;
+    // top: 20%;
+    z-index: 5000;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #28193b34;
+    
+  }
+  .side-book-div{
+    width:100%;
+    height:40%;
+    display:block;
+  }
+  .side-book-div:hover{
+      border-left: 3px solid #996efd;
+      background-color: #28193b;
+  }
+  #sidebook-main-pic{
+      margin-top: 10%;
+      width: 50%;
+      margin-left: 25%;
+      box-shadow: 10px 10px 14px 0px rgba(0,0,0,0.75);
+  }
+  .overflow-div{
+    height:95%;
+    width: 100%;
+    margin-top:13%;
+    // margin-left: -13.2%;
+   
+  } ::-webkit-scrollbar {
+    display: none;
+}
+.side-head{
+    text-align:center;
+    color:white;
+    font-family: 'Ibarra Real Nova', serif;
+}
+#side-head{
+    margin-top:5%;
+
+}
+#profile-cir-pic{
+    width: 8%;
+    height: 8%;
+}
+.profile-name{
+  margin-top: 5%;
+}
+#pop-up-form{
+  width: fit-content;
+}
+.review{
+    margin-top: 1%;
+    padding-bottom: 2%;
+    font-family: 'Crimson Text', serif;
+    color:#372452;
+    font-size: 20px;
+}
+.add_review{
+    background-color: #372452;
+    color: white;
+    border-radius: 25px;
+    width: 30%;
+    height: 2%;
+    padding: 1%;
+    margin-top: 3%;
+    border: none;
+}
+
+#pop-up-div2{
+    position:absolute;
+    z-index: 5000;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #28193b34;
+    font-family: "lato", sans-serif;
+  }
+#pop-up-div{
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: "lato", sans-serif;
+  }
+  
+  .signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .popform {
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  }
+  .poptitle {
+    font-size: 50px;
+  }
+  .inputContainer2 {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+  }
+  
+  .popinput {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  
+  .popinput::placeholder {
+    color: transparent;
+  }
+  .poplabel {
+    position: absolute;
+    top: 1px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: transparent;
+    color: purple;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  .poplabel-upload {
+    margin-bottom: 2%;
+    padding: 0 4px;
+    background-color: transparent;
+    color: purple;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+  .addBtn {
+    display: block;
+    margin-left: 25%;
+    padding: 15px 30px;
+    border: none;
+    background-color: purple;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  .addBtn:hover {
+    background-color: #9867C5;
+    transform: translateY(-2px);
+  }
+  .popinput:focus + .poplabel {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+  }
+  .popinput:not(:placeholder-shown)+ .poplabel {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .pop-subtitle{
+     padding-bottom: 5%;
+  }
+  
+  .popinput1{
+    display: block;
+    padding: 3px;
+    border: none;
+    background-color: purple;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  .star-checking{
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+ 
+  
+  .checked {
+    color: orange;
+  }
+  

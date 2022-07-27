@@ -4,8 +4,6 @@ class HomeController < ApplicationController
 
   def books 
   end
-  def review
-  end
   def donate_books
   
   end
