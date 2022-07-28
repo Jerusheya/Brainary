@@ -42,7 +42,12 @@
 
         </ul>
         <div class="btn_div">
-            <a href="/login"> <button class="btn">Log in</button></a>
+        <%if current_user %>
+        <%= current_user.name%>
+            
+            <%else%>
+              <a href="/login"> <button class="button">Log in</button></a>
+            <%end%>
         </div>
       </div>
       <%# navbar-div ends %>

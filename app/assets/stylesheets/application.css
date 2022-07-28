@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- 
+
  /* has css script of header_page */
  @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&family=Lato:wght@300;400;700&display=swap');
  *{
@@ -196,3 +196,12 @@ font-family: 'Karla', sans-serif;
         color: #44266d;
     }
 }
+
+.fa-solid{
+    -webkit-text-stroke: 1px #cc0000;
+}
+
+#star5{
+    color: transparent;
+}
+

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get "books", to:"home#books" , as: "books"
   match "/donate_books", to:"home#donate_books" , :via => :get
   match "/donate",to:"home#create_donate",:via=>:post
-
+  match "/review",to:"home#create_review",:via=>:post
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
