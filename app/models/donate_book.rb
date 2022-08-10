@@ -1,0 +1,2 @@
+class DonateBook < ApplicationRecord
+end

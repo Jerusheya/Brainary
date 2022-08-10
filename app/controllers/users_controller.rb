@@ -5,7 +5,17 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
+  def roles
+  end
+  def users_profile_page
+    @users = User.all
+  end
+  def add_role
+    @roles = Role.new(roles_params)
+    if @roles.save
+     render plain: "Success"
+    end
+  end
   # GET /users/1 or /users/1.json
   def show
   end
@@ -22,16 +32,14 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    @user[:roles_id] = 2
-    respond_to do |format|
+    @user[:roles_id] = 3
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "User was successfully created." }
-        format.json { render :show, status: :created, location: @user }
+        # format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        # format.json { render :show, status: :created, location: @user }
+        redirect_to '/login'
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render plain:"error"
       end
-    end
   end
 
   # PATCH/PUT /users/1 or /users/1.json
@@ -66,5 +74,10 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :mobile, :email, :password, :password_confirmation, :batch, :profile_pic, :roles_id)
+    end
+
+    private
+    def roles_params
+      params.require(:roles).permit(:roles_name)
     end
 end

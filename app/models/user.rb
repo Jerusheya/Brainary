@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
   validates :email, presence: true, uniqueness: true
- end
+  has_one_attached :book_pic
+end
  

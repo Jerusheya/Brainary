@@ -1,46 +1,46 @@
-<!-- donate_books -->
-
 <%= render "header" %>
-<div class="donate-main">
-    <div>
-        <div class="signupFrm">
-        <form action="/donate" class="form" method="post">
-        <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token%>>
-          <h1 class="title">Donate A Book</h1>
-          <h6 class="sub-title">Share the joy of reading!!</h6>
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a"name="donate[name]" >
-            <label for="" class="label">Name</label>
-            <i class="fa-solid fa-user i1"></i>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a" name="donate[book_name]">
-            <label for="" class="label">Book Name</label>
-            <i class="fa-solid fa-book i1"></i>
-          </div>
-    
-          <div class="inputContainer">
-            <input type="tel" class="input" placeholder="a" name="donate[mobile]">
-            <label for="" class="label">Mobile</label>
-            <i class="fa-solid fa-phone i1"></i>
-          </div>
 
-          <div class="inputContainer">
-            <input type="text" class="input" placeholder="a" name="donate[address]">
-            <label for="" class="label">Address</label>
-            <i class="fa-solid fa-location-pin i1"></i>
-          </div>
-          <button type="submit" class="submitBtn" >Add Task</button>
-        </form>
-      </div>
+<div class="container-fluid"  style="background-color:#56397e;">
+<div class="row" style="width:100%;height:100vh;background-color:white;">
+<div class="col-8" style="height:100vh;">
+   <div class="donate-div">
+   <h1>Donate a Book</h1>
+   <form method="post" action="/donate">
+   <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
+   <%if current_user != nil%>
+   <input type="text" placeholder="User name" name="donate_books[user_name]" value="<%=current_user.name%>">
+   <%else%>
+   <input type="text" placeholder="User name" name="donate_books[user_name]">
+   <%end%>
 
-    </div>
-    <div> <%= image_tag('bookgirl-edit.png',id:"back-pic", alt: "logoimg") %></div>
+   <input type="tel" placeholder="Mobile" name="donate_books[mobile]">
+   <input type="text" placeholder="Book name" name="donate_books[book_name]">
+     <input type="text" placeholder="Language" name="donate_books[language]">
+   <textarea id="don-add" type="text" placeholder="Address" name="donate_books[address]"></textarea>
+   
+   <button type="submit" id="don-btn">Donate</button>
+   </form>
+   </div>
 </div>
-<style>
-  /* style change only for in_page */
-.nav_bar{
-    background-color: transparent;
-}
-</style>
+<div class="col-4" style="background-color:#56397e;height:100vh;">
+  <div class="suggest-book-div">
+  <h1>Suggest a Book</h1>
+   <form method="post" action="/suggest_book">
+   <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
+   <select id="selected" onchange="authorname()" name="suggest_books[option]">Book Name
+   <option value="Book Name">Book Name</option>
+   <option value="Author Name">Author Name</option>
+  </select>
+   <input type="text" placeholder="Book name" name="suggest_books[name]" id="suggest-input">
+    <button type="submit">Suggest</button>
+   </form>
+ </div>
+</div>
+<div>
+</div>
+
+<script>
+  function authorname(){
+      document.getElementById("suggest-input").placeholder=document.getElementById("selected").value;
+  }
+</script>

@@ -21,36 +21,54 @@
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
           <li class="nav-item hover-underline-animation">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/index">Home</a>
           </li>
 
           <li class="nav-item hover-underline-animation">
-            <a class="nav-link active" href="/books">Books</a>
+            <a class="nav-link active" href="/book">Books</a>
           </li>
 
            <li class="nav-item hover-underline-animation">
-            <a class="nav-link active" href="#">Schedule</a>
+            <a class="nav-link active" href="/schedule">Schedule</a>
           </li>
 
           <li class="nav-item hover-underline-animation">
             <a class="nav-link " href="/donate_books">Donate</a>
           </li>
 
-          <li class="nav-item hover-underline-animation">
+          <%# <li class="nav-item hover-underline-animation">
             <a class="nav-link " href="/review">Review</a>
-          </li>
-
+          </li> %>
+          
         </ul>
-        <div class="btn_div">
+
+        
         <%if current_user %>
-        <%= current_user.name%>
-            
-            <%else%>
-              <a href="/login"> <button class="button">Log in</button></a>
-            <%end%>
+        <div class="btn_div_pro" onclick="dropprofile()">
+            <%= image_tag('jeru1.png',id:"profile-cir-pic-main", alt: "profile-img") %>
+            <div class="dropdown_icon_div"><i class="fa-solid fa-caret-down drop-icon" id="drop-icon"></i></div>
         </div>
+        <%else%>
+        <a href="/login" class="btn_div_pro">
+            <i class="fa-solid fa-user"  id="profile-cir-pic-icon"></i>
+        </a>
+        <%end%> 
       </div>
       <%# navbar-div ends %>
     </div>
   </div>
 </nav>
+
+<div id="profile-dropdown" class="display_profile">
+  <div class="button"><a href="/user_profile">Profile</a></div>
+  <div class="button">
+      <a href="/logout"> Log out</a>
+  </div>
+</div>
+
+<script>
+function dropprofile(){
+   document.getElementById("profile-dropdown").classList.toggle("display_profile");
+   document.getElementById("drop-icon").classList.toggle("drop_icon");
+}
+</script>

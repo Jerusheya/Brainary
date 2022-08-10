@@ -1,0 +1,18 @@
+<div class="container-fluid" id="user_main_profile_div">
+<div class="user-profile-pic_profile_page">
+    <%if current_user%> 
+       <%= image_tag('jeru1.png',id:"profile-page-pic", alt: "profile-img") %> 
+     <%else%> 
+            <div class="icon-div"> <i class="fa-solid fa-user"  id="profile-page-icon"></i> </div>
+     <%end%>  
+</div>
+<div class="user-profile-detail_profile_page">
+<div id="inputs_main_div">
+    <div class="inputs_divs"><i class="fa-solid fa-user pofile-icons"></i><input type="text" placeholder="Name" value="<%= current_user.name%>"></div>
+     <div class="inputs_divs"><i class="fa-solid fa-id-badge pofile-icons"></i></i><input type="text" placeholder="Batch" value="<%= current_user.batch%>"></div>
+     <div class="inputs_divs"><i class="fa-solid fa-address-book pofile-icons"></i><input type="text" placeholder="Role" value="<%= Role.find(current_user.roles_id).roles_name%>"></div>
+      <div class="inputs_divs"><i class="fa-solid fa-envelope pofile-icons"></i><input type="text" placeholder="Email" value="<%= current_user.email%>"></div>
+     <div  class="inputs_divs"><i class="fa-solid fa-mobile-screen pofile-icons"></i><input type="text" placeholder="Mobile" value="<%=current_user.mobile%>"></div>
+<button type="submit" id="edit-btn">Edit Profile</button>
+</div>
+</div>

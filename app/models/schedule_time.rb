@@ -1,0 +1,2 @@
+class ScheduleTime < ApplicationRecord
+end

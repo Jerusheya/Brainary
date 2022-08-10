@@ -1,0 +1,532 @@
+#schedule-page{
+  margin-top: 15vh;
+  width: 100%;
+  height: 85vh;
+  font-family: 'Mouse Memoirs', sans-serif;
+}
+
+.schedule-main-div{
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.main_sch_div {
+  width: 78%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  // background-color: #f7f2fb;
+  border-radius: 10px 0px 0px 0px;
+  border-left: 1px solid #f7f2fb;
+  border-top: 1px solid #f7f2fb;
+  overflow-y: auto;
+}
+
+.main_sch_div::-webkit-scrollbar {
+  display: none;
+}
+.close{
+  display: flex;
+  background-color: #382453;
+}
+
+.cal_pre_nex{
+  width: 20%;
+  height: 30%;
+  background-color: #000;
+}
+
+#cal{
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cal-header {
+  width: 100%;
+  height: 10vh;
+  border-bottom: 1px solid #dfe0e5;
+  position: sticky;
+  top: 0;
+  background-color: #382453;
+  color: #fff;
+  z-index: 100000;
+}
+
+#cal-date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cals-date {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #56397e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5vw;
+}
+
+#cal-day {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2vw;
+}
+
+#cal-monthdateyear {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#center {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5vw;
+}
+
+#center span {
+  padding: 0% 1%;
+}
+
+#cal-next {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+
+#cal-prev {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  font-size: 1.5vw;
+  cursor: pointer;
+}
+
+#time-graph {
+  position: relative;
+  width: 100%;
+}
+
+#cal-time {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+}
+
+#cal-time .time-div {
+  display: block;
+  width: 100%;
+}
+
+#cal-time .time-div .time {
+  height: 6vh;
+  width: 5%;
+  text-align: end;
+  padding-top: 2%;
+  border-right: 1.5px solid #dfe0e5;
+}
+
+#cal-time .time-div hr {
+  width: 97%;
+  margin-left: 3%;
+  background-color: #f7f2fb;
+}
+
+#cal-timetable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 95%;
+  height: 100%;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#time-bar {
+  width: 100%;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.title-div {
+  text-align: start;
+  padding-left: 2%;
+}
+
+.time-di span {
+  display: inline-block;
+}
+
+.time-di {
+  text-align: start;
+  padding-left: 2%;
+}
+
+#st-por-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfe0e5;
+  overflow: hidden;
+}
+
+#slider {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  // background-color: #fff2ee;
+  border-left: 1px solid #dfe0e5;
+  border-top: 1px solid #dfe0e5;
+  overflow: hidden;
+  background-color: #f2eefb;
+}
+
+.slider-width {
+  width: 0%;
+  transition: all 0.5s;
+}
+
+.slider-change {
+  width: 22%;
+  transition: all 0.5s;
+}
+
+.click,
+.clicka {
+  width: 93%;
+  height: 100%;
+}
+
+.close {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  color: #ffffff;
+}
+
+#reg-name-div {
+  width: auto;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5vw;
+}
+
+#monthdateyear {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+  color: #ffffff;
+}
+
+#month {
+  height: 100%;
+  margin: 0% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+}
+
+#date {
+  height: 100%;
+  margin: 0% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+}
+
+#year {
+  height: 100%;
+  margin: 0% 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+}
+
+#next {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  font-size: 1.5vw;
+  cursor: pointer;
+  color: #fff;
+}
+
+#prev {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0% 2%;
+  font-size: 1.5vw;
+  cursor: pointer;
+  color: #fff;
+}
+
+#days-list {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Karla', sans-serif;
+  font-size: 1vw;
+  background-color: #56397e;
+  color: #ffffff;
+}
+
+#days-list div {
+  width: calc(100% / 7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dates {
+  width: 100%;
+  height: auto;
+  font-family: 'Karla', sans-serif;
+  font-size: 1vw;
+  // background-color: #f7f2fb;
+  border-bottom: 1px solid #dfe0e5;
+}
+
+#dates div {
+  display: inline-block;
+}
+
+.days-no {
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 4.5% 0%;
+  cursor: pointer;
+}
+
+.today {
+  background-color: #56397e;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clo-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #000;
+  cursor: pointer;
+}
+
+.clo-icon:hover {
+  background-color: #dfe0e5;
+  transition: all 0.5s;
+}
+
+#classs-time {
+  width: 100%;
+  height: 30vh;
+  padding: 5%;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 1vw;
+  border-bottom: 1px solid #dfe0e5;
+}
+
+#select-class{
+  width: 85%;
+  padding: 2% 4%;
+  cursor: pointer;
+  margin-bottom: 4%;
+}
+
+#Time,#Time1{
+  width: 38.7%;
+  padding: 1.5% 3%;
+  margin-bottom: 4%;
+}
+
+#timedate{
+  width: 87%;
+  padding: 1.5% 3%;
+  margin-bottom: 4%;
+}
+
+#timesave {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  padding: 2% 4%;
+  background-color: #56397e;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#class-list{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 57.5%;
+  font-family: "Poppins", sans-serif;
+  overflow-y: auto;
+}
+
+#class-list::-webkit-scrollbar{
+  display: none;
+}
+
+.classes{
+  width: calc(100%/2.3);
+  padding: 2% 4%;
+  margin: 2% 2.7%;
+  height: 15vh;
+  border-radius: 10px;
+  position: relative;
+  background-color: cornflowerblue;
+}
+
+.class-date{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.2vw;
+  padding: 3% 8%;
+}
+
+#class-list .classes{
+  display: inline-block;
+}
+
+.class-del{
+  width: calc(100%/3);
+  height: 7vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#class-list .classes:nth-child(1){
+  display: none;
+}
+
+.display {
+  display: none;
+}
+#time-form{
+  margin:3%;
+  padding: 5%;
+}
+#time-form  input {
+  padding: 2%;
+  margin:1%;
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid  #dfe0e5;
+  outline-color:#dfcff5;
+  color:#382453;
+}
+#time-form label{
+  padding: 2%;
+  margin:1%;
+  color:#382453;
+}
+#time-form datalist  {
+  background-color:#382453;
+  font-size: 15px;
+}
+
+.scheduleBtn{
+  margin-top: 5%;
+  margin-left:35%;
+  background-color: #382453;
+  color:white;
+  padding:3%;
+  border: none;
+  border-radius: 5px;
+}

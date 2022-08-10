@@ -1,0 +1,207 @@
+<%# working on this page %>
+
+<%= render "header" %>
+<%# main div %>
+<div class="container-fluid main_book_page_div"> 
+ <div class="row books_main_row">
+
+   <div class="col-13 books_detail_column" id="book_rows">
+         <button onclick="popupform()" class="i-plus"><i class="fa-solid fa-plus"></i></button>
+
+     <% @list.each do |list|%>
+     <div class="row books_detail_row" style="display:none">
+         <div class="col-5 book_img_div">
+           <div class="img-circle-back"></div>
+            <%= image_tag(list.book_pic,id:"book-main-pic", alt: "bookimg") %>
+         </div>
+         <div class="col-5 book_desc_div">
+         <div class="book_writings_content">
+         <h1 class="book_name"><%=list.name%></h1>
+         <h3 class="author">by <span class="author_name"><%=list.author%></span></h3>
+
+         <div class="book_content"><h6><%=list.description%></h6></div>
+
+         <hr>
+         <h6 class="lang">Language : <span><%=list.language%></span></h6>
+         <h6 class="lang">Category : <span><%=Category.find(list.categories_id).category_name%></span></h6>
+         <button class="add_review" onclick="popupform2(<%=list.id%>)">Write Review  <i class="fa-solid fa-star"></i></button>
+         <div class="review-show-div">
+         <% @review.each do |rev|%>
+          <div style="width:100%"> 
+          <h3 class="profile-name">
+          <%= image_tag('jeru1.png',id:"profile-cir-pic", alt: "profile-img")%>   <%=User.find(rev.users_id).name%></h3>
+          <h6 class="review"><%=rev.review_description%></h6>
+         </div>
+         <%end%>
+         </div>
+         </div>  
+     </div>
+    </div>
+     <%end%>
+    <div class="col-2 books_roller_div">
+    <div class="overflow-auto overflow-div" id="overflow_book_div">
+        <% @list.each do |list|%>
+           <div class="side-book-div">
+             <%= image_tag(list.book_pic,id:"sidebook-main-pic", alt: "bookimg") %>
+             <h5 class="side-head" id="side-head"><%=list.name%></h5>
+             <h6 class="side-head"><%=Category.find(list.categories_id).category_name%></h6>
+           </div>
+        <%end%>
+       <div>
+    </div>
+    </div>
+ </div> 
+</div>
+<div id="pop-up-div-hidden">
+<div id="pop-up-form">
+<div class="signupFrm2">
+<button onclick="popdownform()" class="i-plus-close"><i class="fa-solid fa-xmark"></i></button></h1>
+    <form action="/book_create" class="popform" method="post" enctype="multipart/form-data">
+    <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
+      <h1 class="poptitle">Add Book  
+      <h6 class="pop-subtitle">Please enter the book details</h6>
+      <label for="" class="poplabel-upload">Upload Book Picture</label>
+      <div class="inputContainer2">
+        <input type="file" id="bookpic" class="popinput1" placeholder="a" name="book[book_pic]">
+      </div>
+
+      <div class="inputContainer2">
+        <input id="name" type="text" class="popinput" placeholder="a" name="book[name]">
+        <label for="name" class="poplabel">Name</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="author" type="text" class="popinput" placeholder="a" name="book[author]">
+        <label for="author" class="poplabel">Author</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="desc" type="text" class="popinput" placeholder="a" name="book[description]">
+        <label for="desc" class="poplabel">Description</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="lang" type="text" class="popinput" placeholder="a" name="book[language]">
+        <label for="lang" class="poplabel">Language</label>
+      </div>
+
+      <div class="inputContainer2">
+        <select id="category" type="text" class="popinput" placeholder="a" name="book[category]">
+        <%@cat.each do |options| %>
+          <option value="<%=options.category_name%>"><%=options.category_name%></option>
+        <%end%>
+        </select>
+        <label for="category" class="poplabel">Category</label>
+      </div>
+
+      <button type="submit" class="addBtn">Add Book</button>
+    </form>
+  </div>
+</div>
+</div> 
+
+
+<div id="pop-up-div2" >
+ <div id="pop-up-form">
+ <div class="signupFrm2">
+  <button onclick="popdownform2()" class="i-plus-close"><i class="fa-solid fa-xmark"></i></button>
+    <form action="/create_review" class="popform" method="post">
+    <input type = "hidden" name = "authenticity_token" value ="<%= form_authenticity_token%>">
+    <input type = "hidden" name = "review[books_id]" id="bookid">
+      <h1 class="poptitle">Add Review</h1>
+      <h6 class="pop-subtitle">Please add your review</h6>
+
+
+      <div class="inputContainer2">
+        <input type="text" class="popinput" placeholder="a" name="review[review_description]">
+        <label for="" class="poplabel">Review</label>
+      </div>
+
+      <div class="inputContainer2 star-checking" id="star-checking">
+      <label for="check1" class="star"><i class="fa-solid fa-star"></i></label>
+      <input type="checkbox" value="1" id="check1" name="review[review]" class="check_star" onchange="starreview()">
+       <label for="check2" class="star"><i class="fa-solid fa-star"></i></label>
+      <input type="checkbox" value="2" id="check2" name="review[review]" class="check_star">
+       <label for="check3" class="star"><i class="fa-solid fa-star"></i></label>
+      <input type="checkbox" value="3" id="check3" name="review[review]" class="check_star">
+       <label for="check4" class="star"><i class="fa-solid fa-star"></i></label>
+      <input type="checkbox" value="4" id="check4" name="review[review]" class="check_star">
+      <label for="check5" class="star"><i class="fa-solid fa-star"></i></label>
+      <input type="checkbox" value="5" id="check5" name="review[review]" class="check_star"> 
+      </div>
+
+      <button type="submit" class="addBtn" >Add review</button>
+    </form>
+  </div>
+ </div>
+</div>
+  <style>
+.hidden{
+  visibility:hidden;
+}
+.show{
+  visibility: visible;
+}
+</style>
+<script>
+function starreview(){
+  let len = document.getElementById("star-checking").getElementsByClassName("star").length
+  
+  for(let i=0; i<len; i++){
+    document.getElementById("star-checking").getElementsByClassName("star")[i].onclick = function(){
+      for(let k=0; k<=i; k++){
+      document.getElementById("star-checking").getElementsByClassName("fa-star")[k].style.color="orange";
+      document.getElementById("star-checking").getElementsByClassName("fa-star")[k].checked = "true"
+      }
+      for(let o=i+1; o<len; o++){
+      document.getElementById("star-checking").getElementsByClassName("fa-star")[o].style.color="white";
+      document.getElementById("star-checking").getElementsByClassName("check_star")[o].checked =  false;
+      }
+      for(let s=i; s>=0; s--){
+      document.getElementById("star-checking").getElementsByClassName("check_star")[s].checked =  false;
+      }
+    }
+  }
+}
+let popup = document.getElementById("pop-up-div-hidden");
+function popdownform(){
+  popup.style.display="none"
+}
+function popupform(){
+  popup.style.display="flex"
+}
+let reviewpopup = document.getElementById("pop-up-div2");
+function popdownform2(){
+  reviewpopup.style.display="none"
+}
+function popupform2(a){
+  document.getElementById("bookid").value = a;
+  reviewpopup.style.display="flex"
+}
+
+function book_div(){
+  let book_onclick = document.getElementById("overflow_book_div");
+  let len = book_onclick.getElementsByClassName("side-book-div").length;
+  let book_divs_down=document.getElementById("book_rows");
+        book_divs_down.getElementsByClassName("books_detail_row")[0].style.display="flex";
+  for (let i=0;i<len;i++){
+      book_onclick.getElementsByClassName("side-book-div")[i].onclick=function(){
+        if(i==0){
+          book_divs_down.getElementsByClassName("books_detail_row")[i].style.display="flex";
+        }else{
+        for(let o=(i-1); o>=0; o--){
+          book_divs_down.getElementsByClassName("books_detail_row")[i].style.display="flex";
+          book_divs_down.getElementsByClassName("books_detail_row")[o].style.display="none";
+        }
+        for(let e=i; e<len; e++){
+          book_divs_down.getElementsByClassName("books_detail_row")[i].style.display="flex";
+          book_divs_down.getElementsByClassName("books_detail_row")[e].style.display="none";
+        }
+        }
+      }
+  }
+
+}
+book_div();
+ starreview();
+</script>

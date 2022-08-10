@@ -66,7 +66,7 @@
 .offcanvas-body ul{
     width: 40%;
     height: 100%;
-    margin-left: 20%;
+    margin-left: 10%;
 }
 .offcanvas-body ul li a:hover{
 
@@ -137,27 +137,15 @@
     }
 }
 @media only screen and (min-width: 768px) {
-.btn_div{
-    margin-left: 60%;
-    width: 50%;
+.btn_div_pro{
+    width: 8%;
+    height: 10%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
+    margin-left: 80%;
+    
 }
-.btn_div button{
-    margin: 0% 0%;
-    border: none;
-    color: rgb(251, 230, 251);
-    background-color: #44266d;
-    margin-left: 1%;
-    width: 100%;
-    box-shadow: 0 2px 25px rgba(111, 2, 144, 0.5);
-}
-.btn_div button a{
-    padding: 2% 7%;
-    font-weight: bold;
-font-family: 'Karla', sans-serif;
-} 
+
 }
 .tog{
     font-size: small;
@@ -165,22 +153,6 @@ font-family: 'Karla', sans-serif;
 @media only screen and (max-width: 768px) {
   
 
-    .btn_div button{
-        margin-top: 46%;
-        margin-left: -6%;
-        border: none;
-        outline: none;
-    }
-
-    .btn_div button a{
-    font-size: 1.1vw;
-    font-weight: 300px;
-    color: rgb(15, 14, 15);
-    }
-
-    .btn_div button a:hover{
-        color: #825acc;
-    }
 
     .logo_div img{
         width:120%;
@@ -197,11 +169,64 @@ font-family: 'Karla', sans-serif;
     }
 }
 
-.fa-solid{
-    -webkit-text-stroke: 1px #cc0000;
-}
+
 
 #star5{
     color: transparent;
 }
 
+#profile-cir-pic-main{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+#profile-cir-pic-icon{
+    font-size: 50px;
+    color:#372153;
+}
+#profile-dropdown{
+    width: 10%;
+    height: 5%;
+    top: 6%;
+    right: 7%;
+    position: absolute;
+    z-index: 10000;
+    background-color: white;
+
+}
+#profile-dropdown div{
+    text-align: center;
+    height: 30%;
+    margin-top: 7%;
+    border-radius: 5px;
+}
+#profile-dropdown div a{
+    color: #180b2a;
+    text-decoration: none;
+
+}
+.drop-icon{
+    color: #372153;
+    padding-left: 20%;
+    transition: all 0.2s;
+}
+
+.drop_icon{
+    transition: all 0.2s;
+    transform: rotateX(180deg);
+}
+
+
+
+.display_profile{
+    display: none;
+  }
+
+.dropdown_icon_div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+}

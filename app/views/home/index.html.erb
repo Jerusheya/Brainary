@@ -16,8 +16,8 @@
           <span>Us!!</span>
           </div>
           <div class="search">
-             <button id="startbutton" type="submit">Get Started</button>
-              <button id="explorebutton" type="submit">Explore</button>
+            <button id="startbutton" type="submit"> <a href="/signup" style="color:white;text-decoration:none;">Get Started</a></button>
+            <button id="explorebutton" type="submit">  <a href="/book" style="color:#301a4e;text-decoration:none;">Explore</a></button>
           </div>
         </div>
       </div>
@@ -54,21 +54,21 @@
 
 <h1 class="dancingscript">Reading is a magical Gateway!!</h1>
 <hr class="underline">
-<div class="container1">
-  <div class="box">
+<div class="container-g">
+  <div class="box-pic">
      <%= image_tag('A_wishing_chair_2.jpg',alt: "mainimg" ) %>
   </div>
-  <div class="box">
+  <div class="box-pic">
    <%= image_tag('Alice_In_Wonderland.jpg',alt: "mainimg" ) %>
   </div>
-  <div class="box">
+  <div class="box-pic">
     <%= image_tag('Disney_collection_1.jpg',alt: "mainimg" ) %>
   </div>
-  <div class="box">
+  <div class="box-pic">
     <%= image_tag('harry_potter.jpg',alt: "mainimg" ) %>
   </div>
 </div>
-<button class="bubbly-button">Explore more!</button>
+<button class="bubbly-button"><a href="/book" style="color:white;text-decoration:none;">Explore more!</a></button>
 </div>
 <section class="footer_end">
   <!-- Footer -->
@@ -79,9 +79,9 @@
       <section class="">
         <p class="d-flex justify-content-center align-items-center">
           <span class="me-3">Register for free</span>
-          <a href="/signup"> <button type="button" class="btn btn-outline-light btn-rounded">
-            Sign up!
-          </button></a>
+          <button type="button" class="btn btn-outline-light btn-rounded" id="si-btn"><a href="/signup" style="color:white;text-decoration:none;"> 
+            Sign up!</a>
+          </button>
         </p>
       </section>
       <!-- Section: CTA -->
