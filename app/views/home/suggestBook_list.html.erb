@@ -1,46 +1,44 @@
 <%= render "header" %>
 
-<div class="container-fluid"  style="background-color:#56397e;">
-<div class="row" style="width:100%;height:100vh;background-color:white;">
-<div class="col-8" style="height:100vh;">
-   <div class="donate-div">
-   <h1>Donate a Book</h1>
-   <form method="post" action="/donate">
-   <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
-   <%if current_user != nil%>
-   <input type="text" placeholder="User name" name="donate_books[user_name]" value="<%=current_user.name%>">
-   <%else%>
-   <input type="text" placeholder="User name" name="donate_books[user_name]">
+<div  style = "top:18vh;width:90%;margin-left:5%;">
+<table class="table table-hover" id="donating_list_table">
+  <thead >
+    <tr style="border-bottom:none;">
+      <th scope="col">id</th>
+      <th scope="col">User</th>
+      <th scope="col">Option</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%for i in 0...@suggestList.length do%>
+    <tr>
+      <td><%=i+1%></td>
+      <td><%=@suggestList[i].user_name%></td>
+      <td><%=@suggestList[i].option%></td>
+      <td><%=@suggestList[i].Book_Or_Author_Name%></td>
+      <td>
+       <button class="btn btn-outline-success my-2 my-sm-0" onclick="delTask(<%=@donatelist[i].id%>)">Delete</button>
+       </td>
+
+    </tr>
    <%end%>
-
-   <input type="tel" placeholder="Mobile" name="donate_books[mobile]">
-   <input type="text" placeholder="Book name" name="donate_books[book_name]">
-     <input type="text" placeholder="Language" name="donate_books[language]">
-   <textarea id="don-add" type="text" placeholder="Address" name="donate_books[address]"></textarea>
-   
-   <button type="submit" id="don-btn">Donate</button>
-   </form>
-   </div>
+  </tbody>
+</table>
 </div>
-<div class="col-4" style="background-color:#56397e;height:100vh;">
-  <div class="suggest-book-div">
-  <h1>Suggest a Book</h1>
-   <form method="post" action="/suggest_book">
-   <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
-   <select id="selected" onchange="authorname()" name="suggest_books[option]">Book Name
-   <option value="Book Name">Book Name</option>
-   <option value="Author Name">Author Name</option>
-  </select>
-   <input type="text" placeholder="Book name" name="suggest_books[name]" id="suggest-input">
-    <button type="submit">Suggest</button>
-   </form>
- </div>
-</div>
-<div>
-</div>
-
-<script>
-  function authorname(){
-      document.getElementById("suggest-input").placeholder=document.getElementById("selected").value;
-  }
-</script>
+ <script>
+ function delTask(id){
+        alert("Confirm");
+        window.location.href = "/delete/"+id;
+    }
+ </script>
+ <style>
+ body{
+     background-color:#f2eefb;
+      font-family: 'Mouse Memoirs', sans-serif;
+ }
+ #donating_list_table tbody tr:hover{
+    background-color:#ebe5f5;
+ }
+</style>

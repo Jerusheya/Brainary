@@ -28,7 +28,8 @@ class HomeController < ApplicationController
     render plain: 'Success' if @books.save
   end
 
-  def donate_books; end
+  def donate_books
+  end
 
   def booklist_showing
     @list = Book.all
@@ -66,8 +67,16 @@ class HomeController < ApplicationController
   end
 
   def suggestingbooks
+    @suggestList  = SuggestBook.all
     @suggest = SuggestBook.new(suggest_books_params)
-    render 'donate_books' if @suggest.save
+    if current_user!=nil
+     @suggest[:user_name] = User.find(current_user.id).name
+    else  
+      @suggest[:user_name] = "unknown"
+    end
+    if @suggest.save
+       render 'donate_books' 
+    end
   end
 
   private
@@ -89,7 +98,7 @@ class HomeController < ApplicationController
   end
 
   def suggest_books_params
-    params.require(:suggest_books).permit(:option, :name)
+    params.require(:suggest_books).permit(:option, :Book_Or_Author_Name)
   end
 
   def schedule_params
