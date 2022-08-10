@@ -35,8 +35,14 @@ class HomeController < ApplicationController
 
   def donate_books
   end
-  def donatelist_showing
+  def booklist_showing
     @list = Book.all
+  end
+  def suggestBook_list
+    @suggestlist = SuggestBook.all
+  end
+  def donatelist_showing
+    @donatelist = DonateBook.all
   end
   def schedule
     @list = Book.all

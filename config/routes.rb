@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   match "/donate",to:"home#create_donate",:via=>:post
   match "/suggest_book",to:"home#suggestingbooks",:via=>:post
   match "/book", to:"home#book" , :via => :get
-  get "donatelist_showing",to: "home#donatelist_showing", as: "donate_list"
- 
+  get "donate_list",to: "home#donatelist_showing", as: "donate_list"
+  get "book_list",to: "home#booklist_showing", as: "book_list"
+  get "suggestBook_list",to: "home#suggestBook_list", as: "suggestBook_list"
   match "/book_create",:to => "home#book_create",:via => :post
   match "/roles", to:"users#roles" , :via => :get
   match "/add_role",:to => "users#add_role",:via => :post

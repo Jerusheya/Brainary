@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_09_102241) do
+ActiveRecord::Schema.define(version: 2022_08_10_070648) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -95,6 +95,13 @@ ActiveRecord::Schema.define(version: 2022_08_09_102241) do
     t.bigint "books_id", null: false
     t.index ["books_id"], name: "index_schedule_times_on_books_id"
     t.index ["users_id"], name: "index_schedule_times_on_users_id"
+  end
+
+  create_table "suggest_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "option"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
