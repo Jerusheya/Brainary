@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddBooksToScheduleTimes < ActiveRecord::Migration[6.1]
   def change
     add_reference :schedule_times, :books, null: false, foreign_key: true
