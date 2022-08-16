@@ -1,0 +1,88 @@
+
+<div class="container-fluid">
+
+<div class="row" style="padding-left:5%;padding-right:5%;">
+<div class="col-md" style = "top:18vh;width:90%;">
+<h2 class="donate-headings">Book donaters:</h2>
+<table class="table table-hover" id="donating_list_table">
+  <thead >
+    <tr style="border-bottom:none;">
+      <th scope="col">id</th>
+      <th scope="col">User</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Book</th>
+      <th scope="col">Language</th>
+      <th scope="col">Address</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%for i in 0...@donatelist.length do%>
+    <tr>
+      <td><%=i+1%></td>
+      <td><%=@donatelist[i].user_name%></td>
+      <td><%=@donatelist[i].mobile%></td>
+      <td><%=@donatelist[i].book_name%></td>
+      <td><%=@donatelist[i].language%></td>
+      <td><%=@donatelist[i].address%></td>
+      <td>
+       <button class="btn btn-outline-success my-2 my-sm-0" onclick="delDonate(<%=@donatelist[i].id%>)">Delete</button>
+       </td>
+
+    </tr>
+   <%end%>
+  </tbody>
+</table>
+</div>
+<div class="col-md" style = "top:18vh;width:90%;">
+<h2 class="donate-headings">Book Suggesters:</h2>
+<table class="table table-hover" id="donating_list_table">
+  <thead >
+    <tr style="border-bottom:none;">
+      <th scope="col">id</th>
+      <th scope="col">User</th>
+      <th scope="col">Option</th>
+      <th scope="col">Name</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%for i in 0...@suggestlist.length do%>
+    <tr>
+      <td><%=i+1%></td>
+      <td><%=@suggestlist[i].user_name%></td>
+      <td><%=@suggestlist[i].option%></td>
+      <td><%=@suggestlist[i].Book_Or_Author_Name%></td>
+      <td>
+       <button class="btn btn-outline-success my-2 my-sm-0" onclick="delSuggest(<%=@suggestlist[i].id%>)">Delete</button>
+       </td>
+
+    </tr>
+   <%end%>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+ <script>
+ function delDonate(id){
+        alert("Confirm");
+        window.location.href = "/delete_donate/"+id;
+    }
+ function delSuggest(id){
+        alert("Confirm");
+        window.location.href = "/delete_suggest/"+id;
+    }
+ </script>
+ <style>
+ body{
+     background-color:#f2eefb;
+      font-family: 'Mouse Memoirs', sans-serif;
+ }
+ #donating_list_table tbody tr:hover{
+    background-color:#ebe5f5;
+ }
+ </style>
+

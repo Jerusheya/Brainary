@@ -60,3 +60,6 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
 gem 'rubocop', require: false
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
+gem 'jquery-rails'

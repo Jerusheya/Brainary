@@ -20,5 +20,8 @@ module Brainary
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # config.beginning_of_week = :sunday
+    config.i18n.available_locales = [:en, :de, :fr]
+    config.i18n.default_locale = :en
   end
 end
