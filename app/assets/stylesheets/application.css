@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -130,7 +131,8 @@
         margin-left:12%;
     }
     .offcanvas-body ul li a{
-    color: rgb(15, 14, 15);}
+    color: rgb(15, 14, 15);
+    }
     .offcanvas-body ul li a:hover{
 
         color: #8a63d1;
@@ -229,4 +231,47 @@
     align-items: center;
     justify-content: center;
     font-size: 1.2vw;
+}
+.button{
+    height: 50%;
+}
+
+#poping{
+    width: 100%;
+    height: 100vh;
+    background-color: #2b13526b;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.poping-content{
+    background-color: white;
+    width: 20%;
+    height: 15vh;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: calc(100%/2) calc(100%/2);
+}
+.poping-content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.poping-content div h6{
+  font-family: 'Mouse Memoirs', sans-serif;
+  color:#56397e;
+  font-weight: bold;
+  font-size: 20px
+}
+.poping-content div button{
+    width:20%;
+    padding:1%;
+    background-color: #56397e;
+    color: white;
+    border: none;
+    border-radius: 2px;
 }

@@ -12,11 +12,11 @@
       </ul>
     </div>
   <% end %>
-<%# 
+
   <div class="field">
-    <%= form.label :profile_pic %>
-    <%# <%= form.file_field :profile_pic %> 
-  <%# </div>  %>
+    <%= form.label :profile_pic
+    <%= form.file_field :profile_pic %>
+  </div> 
 <div class="row form_sign_up">
 <div class="col-md">
 <div class="field">
@@ -30,22 +30,22 @@
   </div>
    <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password , :minlength => 6%>
   </div>
   </div>
 <div class="col-md">
  
   <div class="field">
     <%= form.label :batch %>
-    <%= form.number_field :batch %>
+    <%= form.number_field :batch , :min=> 1, :max=> 3 %>
   </div>
   <div class="field">
     <%= form.label :mobile %>
-    <%= form.text_field :mobile %>
+    <%= form.text_field :mobile, :maxlength => 10, :minlength => 10%>
   </div>
   <div class="field">
-    <%= form.label :confirm_password %>
-    <%= form.password_field :confirm_password %>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation , :minlength => 6%>
   </div>
 
 </div>
@@ -57,6 +57,11 @@
 <h6 id="alreadyuser" style="padding-bottom:70px;">Already a user ? <a href="/login">Login</a></h6>
   <div class="actions">
     <%= form.submit %>
+    <% if flash[:error]%>
+            <p class="text-danger">
+                <%= flash[:error] %>
+            </p>
+    <% end %>
 </div>
 </div>
 

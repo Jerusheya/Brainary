@@ -1,0 +1,130 @@
+<%=render "popup"%>
+<button onclick="popupform()" class="i-plus"><i class="fa-solid fa-plus"></i></button>
+
+<div  id="overflow_hidden" style = "top:18vh;width:90%;margin-left:5%;">
+<table class="table table-hover" id="donating_list_table">
+  <thead >
+    <tr style="border-bottom:none;">
+      <th scope="col">id</th>
+      <th scope="col">Book</th>
+      <th scope="col">Author</th>
+      <th scope="col">Language</th>
+      <th scope="col">Category</th>
+      <th scope="col">Status</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%for i in 0...@list.length do%>
+    <tr>
+      <td><%=i+1%></td>
+      <td><%=@list[i].name%></td>
+      <td><%=@list[i].author%></td>
+      <td><%=@list[i].language%></td>
+      <td><%=Category.find(@list[i].categories_id).category_name%></td>
+       <td>
+        <% if @list[i].status==false%>
+          <a href="/unavailable/<%=@list[i].id%>"><button class="btn btn-outline-danger my-2 my-sm-0">Unavailable</button></a>
+        <% else%>
+        <a href="/available/<%=@list[i].id%>"><button class="btn btn-outline-success my-2 my-sm-0">Available</button></a>
+       <%end%>
+      </td>
+      <td>
+       <button class="btn btn-outline-success my-2 my-sm-0" onclick="delBook(<%=@list[i].id%>)">Delete</button>
+       </td>
+
+    </tr>
+   <%end%>
+  </tbody>
+</table>
+</div>
+
+
+<div id="pop-up-div-hidden">
+<div id="pop-up-form">
+<div class="signupFrm2">
+<button onclick="popdownform()" class="i-plus-close"><i class="fa-solid fa-xmark"></i></button></h1>
+    <form action="/book_create" class="popform" method="post" enctype="multipart/form-data">
+    <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
+      <h1 class="poptitle">Add Book  
+      <h6 class="pop-subtitle">Please enter the book details</h6>
+      <label for="" class="poplabel-upload">Upload Book Picture</label>
+      <div class="inputContainer2">
+        <input type="file" id="bookpic" class="popinput1" placeholder="a" name="book[book_pic]">
+      </div>
+
+      <div class="inputContainer2">
+        <input id="name" type="text" class="popinput" placeholder="a" name="book[name]">
+        <label for="name" class="poplabel">Name</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="author" type="text" class="popinput" placeholder="a" name="book[author]">
+        <label for="author" class="poplabel">Author</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="desc" type="text" class="popinput" placeholder="a" name="book[description]">
+        <label for="desc" class="poplabel">Description</label>
+      </div>
+
+      <div class="inputContainer2">
+        <input id="lang" type="text" class="popinput" placeholder="a" name="book[language]">
+        <label for="lang" class="poplabel">Language</label>
+      </div>
+
+      <div class="inputContainer2">
+        <select id="category" type="text" class="popinput" placeholder="a" name="book[category]">
+        <%@cat.each do |options| %>
+          <option value="<%=options.category_name%>"><%=options.category_name%></option>
+        <%end%>
+        </select>
+        <label for="category" class="poplabel">Category</label>
+      </div>
+
+      <button type="submit" class="addBtn">Add Book</button>
+    </form>
+  </div>
+</div>
+</div> 
+
+ <script>
+ function delBook(id){
+        alert("Confirm");
+        window.location.href = "/delete_book/"+id;
+    }
+    let popup = document.getElementById("pop-up-div-hidden");
+function popdownform(){
+  popup.style.display="none"
+  document.body.style.overflow = 'auto';
+}
+function popupform(){
+  popup.style.display="flex"
+  document.body.style.overflow = 'hidden';
+}
+
+console.log("<%= request.original_fullpath %>" == "/book_create");
+
+if("<%= request.original_fullpath %>" == "/book_create"){
+  document.body.style.overflow = 'hidden';
+    document.getElementById("poping").style.display="flex";
+    document.getElementById("thankyou").innerHTML="Thank you for donating books!!"
+}
+
+function pop_ok(){
+  window.location.href = '/book';
+  document.body.style.overflow = 'auto';
+}
+ </script>
+ <style>
+ body{
+     background-color:#f2eefb;
+      font-family: 'Mouse Memoirs', sans-serif;
+ }
+ #donating_list_table tbody tr:hover{
+    background-color:#ebe5f5;
+ }
+
+ </style>
+

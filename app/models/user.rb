@@ -2,6 +2,10 @@
 
 class User < ApplicationRecord
   has_secure_password
+  validates :name, presence: true
+  validates :password, length: { in: 6..12 },
+                       unless: proc { |a| a.password.blank? }
+  has_secure_password
   validates :email, presence: true, uniqueness: true
   has_one_attached :book_pic
 end
