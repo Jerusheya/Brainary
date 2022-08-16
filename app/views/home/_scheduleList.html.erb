@@ -1,0 +1,51 @@
+
+
+<div  style = "top:18vh;width:90%;margin-left:5%;">
+<table class="table table-hover" id="donating_list_table">
+  <thead >
+    <tr style="border-bottom:none;">
+      <th scope="col">id</th>
+      <th scope="col">User</th>
+      <th scope="col">Book</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  <%for i in 0...@schedule_details.length do%>
+    <tr>
+      <td><%=i+1%></td>
+      <td><%=User.find(@schedule_details[i].users_id).name%></td>
+      <td><%=Book.find(@schedule_details[i].books_id).name%></td>
+      <td><%=@schedule_details[i].date%></td>
+      <td><%=@schedule_details[i].time%></td>
+      <td>
+       <button class="btn btn-outline-success my-2 my-sm-0" onclick="delSlot(<%=@schedule_details[i].id%>)">Delete</button>
+       </td>
+
+    </tr>
+   <%end%>
+  </tbody>
+</table>
+</div>
+
+ <script>
+ function delSlot(id){
+        alert("Confirm");
+        window.location.href = "/delete_slot/"+id;
+    }
+
+ </script>
+ <style>
+ body{
+     background-color:#f2eefb;
+      font-family: 'Mouse Memoirs', sans-serif;
+ }
+ #donating_list_table tbody tr:hover{
+    background-color:#ebe5f5;
+ }
+
+ </style>
+

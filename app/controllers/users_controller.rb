@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
+    #user admin email=admin@gmail.com   password  = 123
     @user = User.new(user_params)
     @user[:roles_id] = 3
     if @user.save
@@ -39,7 +40,7 @@ class UsersController < ApplicationController
       # format.json { render :show, status: :created, location: @user }
       redirect_to '/login'
     else
-      render plain: 'error'
+      flash[:error] = 'invalid inputs'
     end
   end
 

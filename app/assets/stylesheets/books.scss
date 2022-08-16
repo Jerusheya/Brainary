@@ -1,4 +1,3 @@
-
 .main_book_page_div{
     height: 100vh;
     background-color: #56397e;
@@ -49,7 +48,7 @@
     box-shadow:24px 27px 38px -10px rgba(0,0,0,1);
 }
 .book_writings_content{
-    margin-top: 35%;
+    margin-top: 30%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&display=swap');
 
@@ -86,9 +85,7 @@
     color:#372452;
 }
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-.book_common_review{
-    
-}
+
 
 .lang{
     font-size: 18px;
@@ -97,22 +94,27 @@
     color:#56397e;
     letter-spacing:2px;
 }
-
+.cat-div{
+  display: flex;
+}
+#category-head{
+  margin-left: 200px;
+}
 .lang span{
     font-weight: lighter;
 }
 
 .i-plus{
     font-size: 20px;
-    top: 15%;
-    left: 75%;
+    margin-top: 8%;
+    left: 90%;
     position: absolute;
     border: none;
     color: white;
     z-index: 1000;
     background-color: #482f6d;
     width:3%;
-    height: 5%;
+    height: 3%;
     border-radius: 50%;
     box-shadow: 2px 5px 10px 0px rgb(55, 22, 75);
   }
@@ -130,19 +132,23 @@
 
   #pop-up-div-hidden{
     position:absolute;
-    // top: 20%;
+    top: 0;
+    left: 0;
     z-index: 5000;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
     display: none;
     justify-content: center;
     align-items: center;
     background-color: #28193b34;
     
   }
+
   .side-book-div{
     width:100%;
-    height:40%;
+    height:43%;
     display:block;
+    
   }
   .side-book-div:hover{
       border-left: 3px solid #996efd;
@@ -332,7 +338,7 @@
     width: 100%;
   }
   .star-checking{
-    border: 1px solid #DADCE0;
+    border:none;
     border-radius: 7px;
     font-size: 16px;
     padding: 0 20px;
@@ -357,7 +363,28 @@
 
 .review-show-div{
   width: 100%;
-  height: 35vh;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 22vh;
+  margin-top: 4%;
+  overflow: auto;
+  background-color: #dec8f191;
+  border-radius: 5px;
+  padding-left: 3%;
+  font-family: 'Mouse Memoirs', sans-serif;
+  // box-shadow:4px 7px 38px -10px rgba(192, 192, 194, 0.74);
 }
+// .review-show-div::-webkit-scrollbar-track
+// {
+//   border-radius: 10px;
+//   background-color: transparent;
+// }
+// .review-show-div::-webkit-scrollbar
+// {
+//   width: 7px;
+//   background-color: transparent;
+// }
+// .review-show-div::-webkit-scrollbar-thumb
+// {
+//   border-radius: 10px;
+//   -webkit-box-shadow: inset 0 0 6px rgba(179, 179, 179, 0.3);
+//   background-color: #ff0000;
+// }
