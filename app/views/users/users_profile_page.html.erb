@@ -4,16 +4,16 @@
     <%if current_user%> 
        <%= image_tag(@users.profile_pic) %> 
      <%else%> 
-            <div class="icon-div"> <i class="fa-solid fa-user"  id="profile-page-icon"></i> </div>
+            <div class="icon-div"> <em class="fa-solid fa-user"  id="profile-page-icon"></em> </div>
      <%end%>  
 </label>
 <input style="display:none;" type="file" id="profile_pic" name="profile[profile_pic]">
 <div class="user-profile-detail_profile_page">
 <div id="inputs_main_div">
-    <div class="inputs_divs"><i class="fa-solid fa-user pofile-icons"></i><input type="text" name="profile[name]" placeholder="Name" value="<%= @users.name%>"></div>
-     <div class="inputs_divs"><i class="fa-solid fa-id-badge pofile-icons"></i></i><input type="text" name="profile[batch]" placeholder="Batch" value="<%= @users.batch%>"></div>
-      <div class="inputs_divs"><i class="fa-solid fa-envelope pofile-icons"></i><input type="text" name="profile[email]" placeholder="Email" value="<%= @users.email%>"></div>
-     <div  class="inputs_divs"><i class="fa-solid fa-mobile-screen pofile-icons"></i><input type="text" name="profile[mobile]" placeholder="Mobile" value="<%=@users.mobile%>"></div>
+    <div class="inputs_divs"><em class="fa-solid fa-user pofile-icons"></em><input type="text" name="profile[name]" placeholder="Name" value="<%= @users.name%>"></div>
+     <div class="inputs_divs"><em class="fa-solid fa-id-badge pofile-icons"></em><input type="text" name="profile[batch]" placeholder="Batch" value="<%= @users.batch%>"></div>
+      <div class="inputs_divs"><em class="fa-solid fa-envelope pofile-icons"></em><input type="text" name="profile[email]" placeholder="Email" value="<%= @users.email%>"></div>
+     <div  class="inputs_divs"><em class="fa-solid fa-mobile-screen pofile-icons"></em><input type="text" name="profile[mobile]" placeholder="Mobile" value="<%=@users.mobile%>"></div>
 <button type="submit" id="edit-btn">Edit Profile</button>
 </form>
 </div>

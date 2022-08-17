@@ -7,7 +7,7 @@
     </div>
     <%# togglebutton %>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <i class="fa-solid fa-bars"></i>
+      <em class="fa-solid fa-bars"></em>
     </button>
      <%# toggle-div %>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -50,11 +50,11 @@
         <%if current_user %>
         <div class="btn_div_pro" onclick="dropprofile()">
             <%= image_tag('jeru1.png',id:"profile-cir-pic-main", alt: "profile-img") %>
-            <div class="dropdown_icon_div"><i class="fa-solid fa-caret-down drop-icon" id="drop-icon"></i></div>
+            <div class="dropdown_icon_div"><em class="fa-solid fa-caret-down drop-icon" id="drop-icon"></em></div>
         </div>
         <%else%>
         <a href="/login" class="btn_div_pro">
-            <i class="fa-solid fa-user"  id="profile-cir-pic-icon"></i>
+            <em class="fa-solid fa-user"  id="profile-cir-pic-icon"></em>
         </a>
         <%end%> 
       </div>

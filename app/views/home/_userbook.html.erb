@@ -21,9 +21,9 @@
          <div class="cat-div"><h6 class="lang">Language : <span><%=list.language%></span></h6>
          <h6 class="lang" id="category-head">Category : <span><%=Category.find(list.categories_id).category_name%></span></h6></div>
          <%if current_user%>
-         <button class="add_review" onclick="popupform2(<%=list.id%>)">Write Review  <i class="fa-solid fa-star"></i></button>
+         <button class="add_review" onclick="popupform2(<%=list.id%>)">Write Review  <em class="fa-solid fa-star"></em></button>
          <%else%>
-         <a href="/login"><button class="add_review">Write Review  <i class="fa-solid fa-star"></i></button></a>
+         <a href="/login"><button class="add_review">Write Review  <em class="fa-solid fa-star"></em></button></a>
          <%end%>
          <div class="review-show-div">
          <% @review.each do |rev|%>
@@ -31,7 +31,7 @@
           <h3 class="profile-name">
           <%= image_tag('jeru1.png',id:"profile-cir-pic", alt: "profile-img")%>   <%=User.find(rev.users_id).name%></h3>
           <h6 class="review"><%=rev.review_description%></h6>
-          <div id="star_i<%=rev.id%>"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <div id="star_i<%=rev.id%>"><em class="fa-solid fa-star"></em><em class="fa-solid fa-star"></em><em class="fa-solid fa-star"></em><em  class="fa-solid fa-star"></em><em class="fa-solid fa-star"></em></div>
          </div>
          <%end%>
          </div>
@@ -58,7 +58,7 @@
 <div id="pop-up-div2" >
  <div id="pop-up-form">
  <div class="signupFrm2">
-  <button onclick="popdownform2()" class="i-plus-close"><i class="fa-solid fa-xmark"></i></button>
+  <button onclick="popdownform2()" class="i-plus-close"><em class="fa-solid fa-xmark"></em></button>
     <form action="/create_review" class="popform" method="post">
     <input type = "hidden" name = "authenticity_token" value ="<%= form_authenticity_token%>">
     <input type = "hidden" name = "review[books_id]" id="bookid">
@@ -72,15 +72,15 @@
       </div>
 
       <div class="inputContainer2 star-checking" id="star-checking">
-      <label for="check1" class="star"><i class="fa-solid fa-star"></i></label>
+      <label for="check1" class="star"><em class="fa-solid fa-star"></em></label>
       <input type="checkbox" value="1" id="check1" name="review[review]" class="check_star" onchange="starreview()">
-       <label for="check2" class="star"><i class="fa-solid fa-star"></i></label>
+       <label for="check2" class="star"><em class="fa-solid fa-star"></em></label>
       <input type="checkbox" value="2" id="check2" name="review[review]" class="check_star">
-       <label for="check3" class="star"><i class="fa-solid fa-star"></i></label>
+       <label for="check3" class="star"><em class="fa-solid fa-star"></em></label>
       <input type="checkbox" value="3" id="check3" name="review[review]" class="check_star">
-       <label for="check4" class="star"><i class="fa-solid fa-star"></i></label>
+       <label for="check4" class="star"><em class="fa-solid fa-star"></em></label>
       <input type="checkbox" value="4" id="check4" name="review[review]" class="check_star">
-      <label for="check5" class="star"><i class="fa-solid fa-star"></i></label>
+      <label for="check5" class="star"><em class="fa-solid fa-star"></em></label>
       <input type="checkbox" value="5" id="check5" name="review[review]" class="check_star"> 
       </div>
 

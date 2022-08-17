@@ -27,7 +27,6 @@ Rails.application.routes.draw do
   match '/add_role', to: 'users#add_role', via: :post
   match '/category', to: 'home#category', via: :get
   match '/add_category', to: 'home#add_category', via: :post
-  # match "/review", to:"home#books" , :via => :get
   match '/create_review', to: 'home#create_review', via: :post
   get '/available/:id' => 'home#available', as: :available
   get '/unavailable/:id' => 'home#unavailable', as: :unavailable
