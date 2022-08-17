@@ -12,7 +12,6 @@
     background-color: rgb(251, 247, 251);
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
-    width: 100%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -26,7 +25,6 @@
     width: 100%;
     height: 100%;
     padding: 0%;
-    margin:0%;
 }
 .outer_div{
     width: 50%;
@@ -419,7 +417,7 @@ $baby-blue: #f8faff;
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;
   text-align: center;
-  background-color: $baby-blue;
+  // background-color: $baby-blue;
   display: inline-block;
   padding: 1em 2em;
   margin-top: 1%;

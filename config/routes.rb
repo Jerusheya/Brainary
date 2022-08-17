@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  get 'user_profile', to: 'users#users_profile_page', as: 'user_profile'
+  get 'user_profile', to: 'users#users_profile_page', as: 'users_profile_page'
   match '/schedule/:date', to: 'home#schedule', via: :get
   match '/schedule', to: 'home#schedule', via: :get
   match '/schedule_post', to: 'home#schedule_post', via: :post
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   get '/delete_slot/:id' => 'home#delete_slot', as: :delete_slot
   get '/delete_donate/:id' => 'home#delete_donate', as: :delete_donate
   get '/delete_suggest/:id' => 'home#delete_suggest', as: :delete_suggest
+  get '/update_profile' => 'users#update_profile', as: :update_profile
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

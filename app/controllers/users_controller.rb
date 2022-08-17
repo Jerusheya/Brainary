@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def roles; end
 
   def users_profile_page
-    @users = User.all
+    @users = User.find(current_user.id)
   end
 
   def add_role
@@ -21,6 +21,12 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show; end
+
+  def update_profile
+    @update = User.update(update_params)
+    @update.profile_pic.attach(update_params[:profile_pic])
+      redirect_to "/user_profile"
+  end
 
   # GET /users/new
   def new
@@ -82,5 +88,9 @@ class UsersController < ApplicationController
 
   def roles_params
     params.require(:roles).permit(:roles_name)
+  end
+
+  def update_params
+    params.require(:profile).permit(:name, :batch, :email, :mobile)
   end
 end
