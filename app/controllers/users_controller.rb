@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def roles; end
+  def roles
+    p "Roles"
+  end
 
   def users_profile_page
     @users = User.find(current_user.id)
@@ -20,7 +22,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show; end
+  def show
+    p "Show"
+  end
 
   def update_profile
     @update = User.update(update_params)
@@ -34,7 +38,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+     p "Hello"
+  end
 
   # POST /users or /users.json
   def create
