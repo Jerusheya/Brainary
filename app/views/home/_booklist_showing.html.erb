@@ -52,31 +52,31 @@
       <h6 class="pop-subtitle">Please enter the book details</h6>
       <label for="" class="poplabel-upload">Upload Book Picture</label>
       <div class="inputContainer2">
-        <input type="file" id="bookpic" class="popinput1" placeholder="a" name="book[book_pic]">
+        <input type="file" id="bookpic" class="popinput1" placeholder="a" name="book[book_pic]" required>
       </div>
 
       <div class="inputContainer2">
-        <input id="name" type="text" class="popinput" placeholder="a" name="book[name]">
+        <input id="name" type="text" class="popinput" placeholder="a" name="book[name]" required>
         <label for="name" class="poplabel">Name</label>
       </div>
 
       <div class="inputContainer2">
-        <input id="author" type="text" class="popinput" placeholder="a" name="book[author]">
+        <input id="author" type="text" class="popinput" placeholder="a" name="book[author]" required>
         <label for="author" class="poplabel">Author</label>
       </div>
 
       <div class="inputContainer2">
-        <input id="desc" type="text" class="popinput" placeholder="a" name="book[description]">
+        <input id="desc" type="text" class="popinput" placeholder="a" name="book[description]" required>
         <label for="desc" class="poplabel">Description</label>
       </div>
 
       <div class="inputContainer2">
-        <input id="lang" type="text" class="popinput" placeholder="a" name="book[language]">
+        <input id="lang" type="text" class="popinput" placeholder="a" name="book[language]" required>
         <label for="lang" class="poplabel">Language</label>
       </div>
 
       <div class="inputContainer2">
-        <select id="category" type="text" class="popinput" placeholder="a" name="book[category]">
+        <select id="category" type="text" class="popinput" placeholder="a" name="book[category]" required>
         <%@cat.each do |options| %>
           <option value="<%=options.category_name%>"><%=options.category_name%></option>
         <%end%>

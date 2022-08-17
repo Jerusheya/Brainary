@@ -10,13 +10,13 @@
    <%if current_user != nil%>
    <input type="text" placeholder="User name" name="donate_books[user_name]" value="<%=current_user.name%>">
    <%else%>
-   <input type="text" placeholder="User name" name="donate_books[user_name]">
+   <input type="text" placeholder="User name" name="donate_books[user_name]" required>
    <%end%>
 
-   <input type="tel" placeholder="Mobile" name="donate_books[mobile]">
-   <input type="text" placeholder="Book name" name="donate_books[book_name]">
-     <input type="text" placeholder="Language" name="donate_books[language]">
-   <textarea id="don-add" type="text" placeholder="Address" name="donate_books[address]"></textarea>
+   <input type="tel" placeholder="Mobile" name="donate_books[mobile]"  required>
+   <input type="text" placeholder="Book name" name="donate_books[book_name]" required>
+     <input type="text" placeholder="Language" name="donate_books[language]" required>
+   <textarea id="don-add" type="text" placeholder="Address" name="donate_books[address]" required></textarea>
    
    <button type="submit" id="don-btn">Donate</button>
    </form>
@@ -38,6 +38,8 @@
 </div>
 <div>
 </div>
+
+
 
 <script>
   function authorname(){

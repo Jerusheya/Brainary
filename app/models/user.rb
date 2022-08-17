@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..12 },
                        unless: proc { |a| a.password.blank? }
   has_secure_password
-  validates :email, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true,format: { with: URI::MailTo::EMAIL_REGEXP } 
   has_one_attached :book_pic
   has_one_attached :profile_pic
 end

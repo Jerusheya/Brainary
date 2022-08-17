@@ -125,6 +125,8 @@ class HomeController < ApplicationController
     @donatinglist = DonateBook.new(donate_params)
     if @donatinglist.save
       render 'donate_books' 
+    else
+     @donatinglist.errors unless @donatinglist.valid?
     end
   end
   def delete_donate
