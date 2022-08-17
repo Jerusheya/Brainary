@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   before_action :role_display
   #home page redirection
   def index
+    p "Index"
   end
  
   #book page redirection
@@ -15,6 +16,7 @@ class HomeController < ApplicationController
 
   #category page redirection function
   def category
+    p "Category"
   end
 
   #adding  category  function

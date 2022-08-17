@@ -27,10 +27,6 @@
 .main_sch_div::-webkit-scrollbar {
   display: none;
 }
-.close{
-  display: flex;
-  background-color: #382453;
-}
 
 .cal_pre_nex{
   width: 20%;
@@ -250,7 +246,11 @@
   height: 10vh;
   position: relative;
   color: #ffffff;
+  display: flex;
+  background-color: #382453;
 }
+
+
 
 #reg-name-div {
   width: auto;
