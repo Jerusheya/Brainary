@@ -2,7 +2,7 @@
 <form action="/update_profile" method="post" enctype="multipart/form-data">
 <label class="user-profile-pic_profile_page" for="profile_pic">
     <%if current_user%> 
-       <%= image_tag(@users.profile_pic) %> 
+        <%= image_tag('jeru1.png',id:"profile-page-pic", alt: "profile-img") %> 
      <%else%> 
             <div class="icon-div"> <em class="fa-solid fa-user"  id="profile-page-icon"></em> </div>
      <%end%>  
