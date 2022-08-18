@@ -1,5 +1,6 @@
 <div class="container-fluid" id="user_main_profile_div">
-<form action="/update_profile" method="post" enctype="multipart/form-data">
+<form action="/update_profile" method="post">
+<input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
 <label class="user-profile-pic_profile_page" for="profile_pic">
     <%if current_user%> 
         <%= image_tag('jeru1.png',id:"profile-page-pic", alt: "profile-img") %> 
@@ -7,7 +8,6 @@
             <div class="icon-div"> <em class="fa-solid fa-user"  id="profile-page-icon"></em> </div>
      <%end%>  
 </label>
-<input style="display:none;" type="file" id="profile_pic" name="profile[profile_pic]">
 <div class="user-profile-detail_profile_page">
 <div id="inputs_main_div">
     <div class="inputs_divs"><em class="fa-solid fa-user pofile-icons"></em><input type="text" name="profile[name]" placeholder="Name" value="<%= @users.name%>"></div>

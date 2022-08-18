@@ -2,7 +2,7 @@
 
 <%if current_user%>
  <%if  Role.find(@role.roles_id).roles_name == "Admin"%>
-  <%= render "scheduleList"%>
+  <%= render "schedule_list"%>
  <%elsif Role.find(@role.roles_id).roles_name == "User"%>
   <%= render "userschedule"%>
  <%end%>

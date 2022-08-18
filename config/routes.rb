@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'donate_list', to: 'home#donatelist_showing', as: 'donate_list'
   get 'book_list', to: 'home#booklist_showing', as: 'book_list'
   get 'suggestBook_list', to: 'home#suggestBook_list', as: 'suggestBook_list'
-  get 'scheduleList', to: 'home#scheduleList', as: 'scheduleList'
+  get 'schedule_list', to: 'home#schedule_list', as: 'schedule_list'
   match '/book_create', to: 'home#book_create', via: :post
   match '/roles', to: 'users#roles', via: :get
   match '/add_role', to: 'users#add_role', via: :post
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/delete_slot/:id' => 'home#delete_slot', as: :delete_slot
   get '/delete_donate/:id' => 'home#delete_donate', as: :delete_donate
   get '/delete_suggest/:id' => 'home#delete_suggest', as: :delete_suggest
-  get '/update_profile' => 'users#update_profile', as: :update_profile
+  post '/update_profile' => 'users#update_profile', as: :update_profile
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

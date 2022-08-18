@@ -102,12 +102,12 @@
           <input type = "hidden" name = "authenticity_token" value = <%= form_authenticity_token %>>
              <label for="user_name" >User name</label>
              <%if current_user!=nil%>
-              <input id="user_name" type="text" class="" placeholder="a" name="schedule_times[users_id]" value="<%=current_user.name%>">
+              <input id="user_name" type="text" class="" placeholder="a" name="schedule_times[users_name]" value="<%=current_user.name%>">
              <%else%> 
-              <input id="user_name" type="text" class="" placeholder="a" name="schedule_times[users_id]" >
+              <input id="user_name" type="text" class="" placeholder="a" name="schedule_times[users_name]" >
              <%end%>
               <label for="book_name" >Book name</label>
-              <input list="book_name" name="schedule_times[book_name_id]" id="book_list">
+              <input list="book_name" name="schedule_times[book_name]" id="book_list">
               <datalist id="book_name" >
               <%@list.each do |booklist|%>
                 <option value="<%=booklist.name%>">
@@ -137,7 +137,7 @@
                   <h6 id='sch-book-bookname'><%=Book.find(sch.books_id).name%></h6>
                   <h6 id='sch-book-status'>
                     <%if Book.find(sch.books_id).status == false%>
-                      Unavailable
+                      <p style="color:red;">Unavailable</p>
                     <%else%>
                       Available
                     <%end%>

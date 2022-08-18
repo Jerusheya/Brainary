@@ -28,7 +28,6 @@ class UsersController < ApplicationController
 
   def update_profile
     @update = User.update(update_params)
-    @update.profile_pic.attach(update_params[:profile_pic])
       redirect_to "/user_profile"
   end
 

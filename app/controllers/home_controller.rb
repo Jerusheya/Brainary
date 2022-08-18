@@ -6,13 +6,6 @@ class HomeController < ApplicationController
   def index
     p "Index"
   end
- 
-  #book page redirection
-  def book
-    @cat = Category.all
-    @list = Book.all
-    @review = Review.all
-  end
 
   #category page redirection function
   def category
@@ -25,6 +18,14 @@ class HomeController < ApplicationController
 
     render plain: 'Success' if @categories.save
   end
+ 
+  #book common page redirection
+  def book
+    @cat = Category.all
+    @list = Book.all
+    @review = Review.all
+  end
+
 
   #book creating function
   def book_create
@@ -93,17 +94,24 @@ class HomeController < ApplicationController
 
   end
 
-  def scheduleList
+  #schedule_list admin page redirection
+  def schedule_list
     @schedule_details = ScheduleTime.all
 
   end
   #storing schedule function
   def schedule_post
     @schedule_inputs = ScheduleTime.new(schedule_params)
-    @schedule_inputs[:users_id] = current_user.id
-    @booklists = Book.find_by_name(params[:schedule_times][:book_name_id])
+    @userid = User.find_by_name(params[:schedule_times][:users_name])
+    @schedule_inputs.users_id = @userid.id
+    @booklists = Book.find_by_name(params[:schedule_times][:book_name])
     @schedule_inputs.books_id = @booklists.id
-    redirect_to '/schedule' if @schedule_inputs.save
+    if @schedule_inputs.save
+      redirect_to '/schedule' 
+    end
+
+    p "==========================================="
+    p @userid
   end
 
   def delete_slot
@@ -180,7 +188,7 @@ class HomeController < ApplicationController
   end
 
   def schedule_params
-    params.require(:schedule_times).permit(:date, :time, :users_id)
+    params.require(:schedule_times).permit(:date, :time)
   end
   def role_display
     if current_user
