@@ -9,7 +9,7 @@
 * All inputs fields are mandatory
 * Username should contain only letters in it with 3 to 15 characters.
 * Email should contain @ and . in it which should be in an email format.
-* Password should contain at least 1 Uppercase, 1 Lowercase, 1 Number, 1 Symbol(symbol allowed --> !@#$%^_=+-)
+* Password has been done with password digest.
 * Password should contain minimum 8 characters and maximum 12 characters.
 * Confirm Password and Password should be same and equal.
 * If these matches correctly the user will be redirected to the main page.

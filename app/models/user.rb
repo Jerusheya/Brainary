@@ -2,7 +2,8 @@
 
 class User < ApplicationRecord
   has_secure_password
-  validates :name, presence: true
+  validates :name, presence: true, length: {minimum: 3, maximum: 15},
+                   format: {with: /\A[^0-9`!@#$%\^&*+_=]+\z/ }
   validates :password, length: { in: 6..12 },
                        unless: proc { |a| a.password.blank? }
   has_secure_password
