@@ -129,6 +129,13 @@
         margin-top: 10vh;
         margin-left:43%;
 }
+@media only screen and (max-width: 768px) {
+    .user-profile-pic_profile_page  #profile-page-pic{
+        margin-top: 10vh;
+        margin-left:23%;
+}
+
+}
 .icon-div{
     background-color: white;
     border-radius: 50%;

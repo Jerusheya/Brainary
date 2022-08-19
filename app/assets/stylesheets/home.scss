@@ -397,6 +397,7 @@
             width: 10px;
           }
         }
+      
       }
       .underline{
         width: 20%;
@@ -412,7 +413,11 @@ $baby-blue: #f8faff;
 #si-btn{
   width: 10%;
 }
-
+@media only screen and (max-width: 768px) {
+  #si-btn{
+    width: 50%;
+  }
+}
 .bubbly-button{
   font-size: 16px;
   font-family: 'Helvetica', 'Arial', sans-serif;

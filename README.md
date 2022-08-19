@@ -1,7 +1,7 @@
 # BRAINARY  
 
-    * It is a library management system which can be used by library management system and their users too.
-    * It has three user flows: admin, librarian and user
+* It is a library management system which can be used by library management system and their users too.
+* It has three user flows: admin, librarian and user
 
 ## Registeration :
 

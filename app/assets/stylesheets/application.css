@@ -153,9 +153,24 @@
     font-size: small;
 }
 @media only screen and (max-width: 768px) {
-  
+    .btn_div_pro{
+        margin-top:1%;
+      
+    }
+    #profile-cir-pic-main{
+         margin-left: 80%;
+    }
+    #drop-icon{
+        font-size: 20px;
+        margin-left: 80%;
 
-
+    }
+    .dropdown_icon_div{
+        top: 5%;
+        position: absolute;
+    }
+    
+    
     .logo_div img{
         width:120%;
         height: 30%;
