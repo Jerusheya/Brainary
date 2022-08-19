@@ -4,7 +4,7 @@
     margin-top: 15%;
     margin-left: 10%;
 }
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
 .donate-div h1{
     font-family: 'Mouse Memoirs', sans-serif;
     color:#56397e;
@@ -13,7 +13,6 @@
 .donate-div  ::placeholder{
     color:#56397e;
     // padding: 2%;
-    // font-family: 'Mouse Memoirs', sans-serif;
 }
 .donate-div input{
     width: 100%;
@@ -24,7 +23,6 @@
     background-color: #e1d9ee;
     color:#56397e;
     padding: 2%;
-    // font-family: 'Mouse Memoirs', sans-serif;
     outline: none;
 }
 .donate-div textarea{
@@ -44,7 +42,6 @@
     background-color: #56397e;
     border-radius: 5px;
     border: none;
-    // font-family: 'Mouse Memoirs', sans-serif;
     color:white;
     font-weight: bold;
     font-size: 20px;
@@ -70,7 +67,6 @@
     background-color: #211433a2;
     color:#e1d9ee;
     padding: 3%;
-    // font-family: 'Mouse Memoirs', sans-serif;
     outline: none;
 }
 .suggest-book-div select{
@@ -82,14 +78,12 @@
     background-color: #ffffff;
     color:#2b1352;
     padding: 3%;
-    // font-family: 'Mouse Memoirs', sans-serif;
     outline: none;
     text-align: center;
 }
 .suggest-book-div option{
     color:#2b1352;
     padding: 3%;
-    // font-family: 'Mouse Memoirs', sans-serif;
 }
 .suggest-book-div button{
     padding: 1%;
@@ -99,7 +93,6 @@
     background-color: white;
     border-radius: 5px;
     border: none;
-    // font-family: 'Mouse Memoirs', sans-serif;
     color:#56397e;
     font-weight: bold;
     font-size: 20px;
@@ -107,18 +100,15 @@
 .suggest-book-div  ::placeholder{
     color:#f2ecfa;
     // padding: 2%;
-    // font-family: 'Mouse Memoirs', sans-serif;
 }
 #donating_list_table thead{
     background-color:#573880;
     color:white;
     border-radius:50px 50px 0 0;
-    // font-family: 'Mouse Memoirs', sans-serif;
   }
   .donate-headings{
       font-size: 25px;
       padding-bottom: 5%;
-    //   font-family: 'Mouse Memoirs', sans-serif;
       color:#2b1352;
       font-weight: bold;
   }
