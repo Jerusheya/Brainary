@@ -410,8 +410,13 @@ $button-bg: $fuschia;
 $button-text-color: #fff;
 $baby-blue: #f8faff;
 
-#si-btn{
+#si-btn {
   width: 10%;
+}
+#si-btn a {
+color:white;text-decoration:none;}
+#si-btn a:hover{
+  color:#2d1549;
 }
 @media only screen and (max-width: 768px) {
   #si-btn{
